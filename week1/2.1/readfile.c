@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main (int argc, char *argv[])
+{
+  char str[20] = {"1234567"};
+  char chr = 0;
+  FILE * pFile;
+  pFile = fopen ("filein.c","rw");
+  
+  if(pFile != NULL)
+  {
+    while(feof(pFile) == 0)
+    {
+      chr = getc(pFile);
+      putc(chr,stdout);
+    }
+    fclose(pFile);
+  }
+  else
+  { 
+   printf("/nGreshka pri otvariane na file/n");
+  }
+
+  return 0;
+}

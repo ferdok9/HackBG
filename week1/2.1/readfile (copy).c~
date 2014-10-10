@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main (int argc, char *argv[])
+{
+  char str[20] = {"1234567"};
+  char chr = 0;
+  FILE * pFile;
+  pFile = fopen ("filein.c","rw");
+  
+  if(pFile != NULL)
+  {
+    while(feof(pFile) == NULL)
+    {
+      chr = getc(pFile);
+      putc(chr,pFile);
+    }
+  }
+  else
+  { 
+   printf("greshka pri otvariane na file");
+  }
+//  scanf("%s", &str[0]);
+//  if (pFile!=NULL)
+//  {
+//    fputs (str,pFile);
+//    fclose (pFile);
+//  }
+  
+
+//  printf ("\nputs'%s' in file:'%s' \n",&str[0],argv[1]);
+
+  return 0;
+}
